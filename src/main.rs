@@ -2,7 +2,7 @@ mod project;
 
 use project::{Project, ProjectStatus};
 use std::env;
-use std::io;
+use std::file;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -44,6 +44,4 @@ fn add_project(name: &String) {
     println!("{}", p.serialize());
 }
 
-fn set_name() {}
-
-fn ask_for_path() {}
+fn save_project(project: Project) {}
