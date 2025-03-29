@@ -6,7 +6,6 @@ use std::io;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    dbg!(&args);
 
     if args.len() < 2 {
         help_menu();
@@ -19,7 +18,7 @@ fn main() {
         }
 
         "add" => {
-            if args.len() < 3 {
+            if args.len() == 3 {
                 add_project(&args[2]);
             }
         }
@@ -41,6 +40,8 @@ fn add_project(name: &String) {
         path: "/home/xam/Projects/projectManager".to_string(),
         status: ProjectStatus::InProgress,
     };
+
+    println!("{}", p.serialize());
 }
 
 fn set_name() {}
